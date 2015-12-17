@@ -1,0 +1,32 @@
+{
+  "name": "rethinkdb",
+  "description": "Installs/Configures rethinkdb",
+  "long_description": "rethinkdb Cookbook\n==================\nThis cookbook provides you with the ability to install RethinkDB from package / source\n\nRequirements\n------------\n\n* Tested on Ubuntu 12.04\n\n#### packages\n- `apt`\n\nAttributes\n----------\n\n    default['rethinkdb']['install_method'] = 'package'\n    default['rethinkdb']['version'] = '1.7.1'\n    default['rethinkdb']['make_threads'] = node['cpu'] ? node['cpu']['total'].to_i : 1\n    default['rethinkdb']['src_url'] = \"http://download.rethinkdb.com/dist\"\n    default['rethinkdb']['dir'] = \"/usr/local\"\n    \n    default['rethinkdb']['instances'] = [  \n        {      \n          :name  => 'rethinkdb.yb.com',\n          :user  => 'rethinkdb',\n          :group => 'rethinkdb',\n          :address => \"all\",\n          :driverPort => 28015,\n          :clusterPort => 29015,\n          :portOffset => 0,\n          :httpPort => 8080,\n          :directory => \"/opt/rethinkdb/rethinkdb.yb.com/data\"\n        }\n    ]\n            \n\nUsage\n-----\n#### rethinkdb::default\n\n```ruby\nname 'rethinkdb'\ndescription 'Rethinkdb - master'\n\ndefault_attributes({\n  \n})\n\nrun_list(\n  'recipe[rethinkdb]',\n  'recipe[rethinkdb::start]'  \n)\n```\n\nContributing\n------------\n\n\n1. Fork the repository on Github\n2. Create a named feature branch (like `add_component_x`)\n3. Write you change\n4. Write tests for your change (if applicable)\n5. Run the tests, ensuring they all pass\n6. Submit a Pull Request using Github\n\nLicense and Authors\n-------------------\nAuthors: \n\n1. Vitaly Aminev (<v@aminev.me>) http://avvs.co\n",
+  "maintainer": "Make-o-Matic, LLC",
+  "maintainer_email": "v@aminev.me",
+  "license": "Apache 2.0",
+  "platforms": {
+  },
+  "dependencies": {
+    "apt": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.3.13",
+  "source_url": "",
+  "issues_url": ""
+}

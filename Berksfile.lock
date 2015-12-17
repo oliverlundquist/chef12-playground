@@ -1,0 +1,10 @@
+DEPENDENCIES
+  rethinkdb
+    git: git://github.com/oliverlundquist/chef-rethinkdb.git
+    revision: ce34b1b0ae88f23e4ae08e50be07c2945cd4de3e
+    branch: master
+
+GRAPH
+  apt (2.9.2)
+  rethinkdb (0.3.13)
+    apt (>= 0.0.0)
